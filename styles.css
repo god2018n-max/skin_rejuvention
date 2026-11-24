@@ -536,3 +536,146 @@ a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible{
   .product-card>.product-examples{margin-inline:18px}
   .product-card>.product-examples{margin-bottom:19px}
 }
+
+/* Product recommendations — refined editorial price cards */
+.products-section > .cleanser-guide{
+  position:relative;
+  margin-top:34px;
+  padding:clamp(22px,3.2vw,38px);
+  border:1px solid #e8e2d6;
+  border-radius:5px 24px 5px 24px;
+  background:linear-gradient(145deg,#fffefa 0%,#f8f5ed 100%);
+  box-shadow:0 15px 38px rgba(47,65,49,.065);
+  overflow:hidden;
+}
+.products-section > .cleanser-guide:before{
+  content:"";
+  position:absolute;
+  top:0;right:0;width:5px;height:100%;
+  background:linear-gradient(180deg,#bd9875,#718b70);
+}
+.cleanser-guide-heading{
+  position:relative;
+  max-width:760px;
+  margin:0 0 27px;
+  padding:0 0 20px;
+  border-bottom:1px solid #e9e3d8;
+}
+.cleanser-guide-heading .mini-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:5px 11px;
+  border-radius:30px;
+  background:#edf2e9;
+  color:#58745d;
+  font-size:10px;
+  font-weight:700;
+}
+.cleanser-guide-heading h3{
+  font-size:clamp(21px,2.5vw,28px);
+  line-height:1.7;
+  margin:12px 0 5px;
+  color:#294d3d;
+  letter-spacing:-.5px;
+}
+.cleanser-guide-heading p{
+  max-width:680px;
+  font-size:12px;
+  line-height:2.2;
+  color:#718077;
+}
+.cleanser-list{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
+}
+.cleanser-item{
+  position:relative;
+  min-height:190px;
+  padding:22px 22px 19px;
+  border:1px solid #eae6dc;
+  border-radius:4px 16px 4px 16px;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 5px 17px rgba(46,65,49,.035);
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease;
+}
+.cleanser-item:hover{
+  transform:translateY(-4px);
+  border-color:#c9d5c5;
+  box-shadow:0 13px 25px rgba(46,65,49,.085);
+}
+.cleanser-price{
+  display:inline-flex;
+  align-items:center;
+  min-height:27px;
+  padding:4px 11px;
+  border-radius:30px;
+  background:#edf2e9;
+  color:#45684e;
+  font-size:11px;
+  font-weight:800;
+  line-height:1.7;
+}
+.cleanser-item h4{
+  font-size:15px;
+  line-height:1.8;
+  margin:12px 0 5px;
+  color:#2e4939;
+}
+.cleanser-skin{
+  display:inline-block;
+  color:#8a755e;
+  background:#f5f0e8;
+  border-radius:3px 10px 3px 10px;
+  padding:4px 9px;
+  font-size:10px;
+  line-height:1.8;
+}
+.cleanser-item p{
+  font-size:11px;
+  line-height:2.15;
+  color:#738078;
+  margin:14px 0 18px;
+}
+.cleanser-item a{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  font-size:10px;
+  line-height:1.9;
+  color:#456d51;
+  border-bottom:1px solid #cbd8ca;
+  padding-bottom:4px;
+  transition:color .2s ease,border-color .2s ease;
+}
+.cleanser-item a:hover{color:#a17657;border-color:#c9a98d}
+.price-disclaimer{
+  margin-top:20px;
+  padding:12px 15px;
+  border-right:3px solid #c1a17e;
+  border-radius:3px 10px 10px 3px;
+  background:#f4f0e8;
+  color:#776e60;
+  font-size:10px;
+  line-height:2.15;
+}
+.brightening-safety,.barrier-safety,.exfoliation-safety{
+  border-radius:3px 12px 12px 3px;
+  padding:14px 17px;
+  font-size:11px;
+  line-height:2.2;
+}
+@media(max-width:620px){
+  .products-section > .cleanser-guide{
+    margin-top:25px;
+    padding:22px 16px;
+    border-radius:4px 17px 4px 17px;
+  }
+  .cleanser-guide-heading{margin-bottom:19px;padding-bottom:16px}
+  .cleanser-list{grid-template-columns:1fr;gap:11px}
+  .cleanser-item{min-height:0;padding:19px 17px}
+  .cleanser-item h4{font-size:14px}
+  .cleanser-item p{margin:11px 0 15px}
+  .price-disclaimer{padding:11px 12px}
+}
+
