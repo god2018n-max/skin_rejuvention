@@ -61,6 +61,7 @@ routineBuilder?.addEventListener("submit", (event) => {
 });
 
 // Filter product recommendations by the skin type they are intended for.
+const selectedCompareCards = new Set();
 const productFilterButtons = document.querySelectorAll("[data-skin-filter]");
 const productFilterCount = document.querySelector("#productFilterCount");
 const productGuides = document.querySelectorAll(".products-section .cleanser-guide");
@@ -80,13 +81,31 @@ const productMatchesSkin = (item, skin) => {
 };
 const applyProductSkinFilter = (skin) => {
   let visibleCount = 0;
+  let retainedCount = 0;
   productGuides.forEach((guide) => {
     const items = guide.querySelectorAll(".cleanser-item");
     let visibleInGuide = 0;
     items.forEach((item) => {
-      const show = productMatchesSkin(item, skin);
+      const matches = productMatchesSkin(item, skin);
+      const retainedForCompare = selectedCompareCards.has(item);
+      const show = matches || retainedForCompare;
       item.hidden = !show;
-      if (show) { visibleCount += 1; visibleInGuide += 1; }
+      if (matches) visibleCount += 1;
+      else if (retainedForCompare) retainedCount += 1;
+      if (show) visibleInGuide += 1;
+
+      let note = item.querySelector(".compare-filter-note");
+      if (retainedForCompare && !matches) {
+        if (!note) {
+          note = document.createElement("p");
+          note.className = "compare-filter-note";
+          note.textContent = "این محصول به‌دلیل انتخاب برای مقایسه، با وجود خارج‌بودن از فیلتر فعلی نمایش داده شده است.";
+          item.append(note);
+        }
+        note.hidden = false;
+      } else if (note) {
+        note.hidden = true;
+      }
     });
     guide.hidden = visibleInGuide === 0;
   });
@@ -96,10 +115,13 @@ const applyProductSkinFilter = (skin) => {
     button.setAttribute("aria-pressed", String(active));
   });
   if (productFilterCount) {
-    const selected = document.querySelector('[data-skin-filter="' + skin + '"]')?.textContent.trim();
-    productFilterCount.textContent = skin === "all"
-      ? "همه " + visibleCount + " پیشنهاد نمایش داده می‌شوند."
-      : visibleCount + " پیشنهاد مرتبط با پوست " + selected + " نمایش داده می‌شود.";
+    const selectedLabel = document.querySelector('[data-skin-filter="' + skin + '"]')?.textContent.trim();
+    if (skin === "all") {
+      productFilterCount.textContent = "همه " + visibleCount + " پیشنهاد نمایش داده می‌شوند.";
+    } else {
+      productFilterCount.textContent = visibleCount + " پیشنهاد مرتبط با پوست " + selectedLabel + " نمایش داده می‌شود."
+        + (retainedCount ? " " + retainedCount + " محصول انتخاب‌شده برای مقایسه نیز نگه داشته شده است." : "");
+    }
   }
 };
 productFilterButtons.forEach((button) => {
@@ -117,7 +139,7 @@ const compareEmpty = document.querySelector("#compareEmpty");
 const compareWrap = document.querySelector("#compareTableWrap");
 const compareBody = document.querySelector("#compareTableBody");
 const compareClear = document.querySelector("#compareClear");
-const selectedCompareCards = new Set();
+
 const faNumber = (number) => number.toLocaleString("fa-IR");
 
 const renderProductComparison = () => {
@@ -156,6 +178,8 @@ const renderProductComparison = () => {
       checkbox.disabled = selectedCompareCards.size >= 3 && !checkbox.checked;
     }
   });
+  const activeFilter = document.querySelector("[data-skin-filter].is-active")?.dataset.skinFilter || "all";
+  applyProductSkinFilter(activeFilter);
 };
 compareCards.forEach((card, index) => {
   const label = document.createElement("label");
