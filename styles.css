@@ -33,3 +33,9 @@
 .cleanser-item a{font-size:10px;color:var(--green);font-weight:700;margin-top:auto;border-bottom:1px solid #cbd8ca;padding-bottom:3px}
 .price-disclaimer{font-size:10px;line-height:2;color:#78847b;margin:15px 0 0}
 @media(max-width:620px){.cleanser-guide{padding:20px 14px;margin-top:28px}.cleanser-list{grid-template-columns:1fr}.cleanser-guide-heading h3{font-size:20px}}
+
+/* Toner and essence guide */
+.toner-guide{margin-top:26px;background:#f7f5f0;border-color:#ebe6dc}
+.toner-guide .mini-kicker{color:#8b8068}
+.toner-guide .cleanser-price{background:#f4f0e7;color:#887654}
+.toner-guide .cleanser-item a{color:#71816a}
