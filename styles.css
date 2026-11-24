@@ -67,3 +67,10 @@
 .sunscreen-guide .cleanser-price{background:#e7f0ed;color:#55796e}
 .sunscreen-guide .cleanser-item a{color:#52786d}
 .sunscreen-safety{margin:16px 0 0;padding:13px 16px;background:#fff;border-right:3px solid #83a99a;color:#5f746b;font-size:11px;line-height:2.15}
+
+/* Oily and acne-prone skin guide */
+.acne-guide{margin-top:26px;background:#f4f5f1;border-color:#e3e8df}
+.acne-guide .mini-kicker{color:#74866b}
+.acne-guide .cleanser-price{background:#edf1e8;color:#667a5e}
+.acne-guide .cleanser-item a{color:#5e7558}
+.acne-safety{margin:16px 0 0;padding:13px 16px;background:#fff;border-right:3px solid #9aaa83;color:#66715f;font-size:11px;line-height:2.15}
