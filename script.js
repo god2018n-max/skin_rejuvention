@@ -107,3 +107,74 @@ productFilterButtons.forEach((button) => {
 });
 if (productFilterButtons.length) applyProductSkinFilter("all");
 
+
+
+// Compare up to three recommended products side by side.
+const compareCards = [...document.querySelectorAll(".products-section .cleanser-item")];
+const comparePanel = document.querySelector("#productCompare");
+const compareCount = document.querySelector("#compareSelectionCount");
+const compareEmpty = document.querySelector("#compareEmpty");
+const compareWrap = document.querySelector("#compareTableWrap");
+const compareBody = document.querySelector("#compareTableBody");
+const compareClear = document.querySelector("#compareClear");
+const selectedCompareCards = new Set();
+const faNumber = (number) => number.toLocaleString("fa-IR");
+
+const renderProductComparison = () => {
+  const selected = [...selectedCompareCards];
+  if (compareCount) compareCount.textContent = faNumber(selected.length) + " از ۳ محصول";
+  if (compareEmpty) compareEmpty.hidden = selected.length > 0;
+  if (compareWrap) compareWrap.hidden = selected.length === 0;
+  if (compareClear) compareClear.hidden = selected.length === 0;
+  if (!compareBody) return;
+
+  compareBody.replaceChildren();
+  const rows = [
+    ["نام محصول", card => card.querySelector("h4")?.textContent.trim() || "—"],
+    ["قیمت تقریبی", card => card.querySelector(".cleanser-price")?.textContent.trim() || "درج نشده"],
+    ["نوع پوست", card => card.querySelector(".cleanser-skin")?.textContent.trim() || "ذکر نشده"],
+    ["توضیحات", card => card.querySelector("p")?.textContent.trim() || "—"]
+  ];
+  rows.forEach(([label, getValue]) => {
+    const tr = document.createElement("tr");
+    const th = document.createElement("th");
+    th.scope = "row";
+    th.textContent = label;
+    tr.append(th);
+    for (let i = 0; i < 3; i += 1) {
+      const td = document.createElement("td");
+      td.textContent = selected[i] ? getValue(selected[i]) : "—";
+      tr.append(td);
+    }
+    compareBody.append(tr);
+  });
+
+  compareCards.forEach(card => {
+    const checkbox = card.querySelector(".compare-pick input");
+    if (checkbox) {
+      checkbox.checked = selectedCompareCards.has(card);
+      checkbox.disabled = selectedCompareCards.size >= 3 && !checkbox.checked;
+    }
+  });
+};
+compareCards.forEach((card, index) => {
+  const label = document.createElement("label");
+  label.className = "compare-pick";
+  const checkbox = document.createElement("input");
+  checkbox.type = "checkbox";
+  checkbox.setAttribute("aria-label", "افزودن " + (card.querySelector("h4")?.textContent.trim() || "محصول") + " به مقایسه");
+  checkbox.addEventListener("change", () => {
+    if (checkbox.checked && selectedCompareCards.size < 3) selectedCompareCards.add(card);
+    else selectedCompareCards.delete(card);
+    renderProductComparison();
+  });
+  const text = document.createElement("span");
+  text.textContent = "انتخاب برای مقایسه";
+  label.append(checkbox, text);
+  card.append(label);
+});
+compareClear?.addEventListener("click", () => {
+  selectedCompareCards.clear();
+  renderProductComparison();
+});
+if (comparePanel && compareCards.length) renderProductComparison();
