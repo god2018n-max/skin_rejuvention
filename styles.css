@@ -17,3 +17,19 @@
 @media(max-width:850px){.products-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:620px){.products-grid{grid-template-columns:1fr}.product-card{min-height:0;padding:22px}.products-section .section-heading{display:block}.products-section .side-label{display:inline-block;margin-top:10px}}
 @media(prefers-reduced-motion:reduce){.product-card{transition:none}}
+
+/* Iran-market cleanser recommendations */
+.cleanser-guide{margin-top:42px;padding:30px;background:#f3f6f0;border:1px solid #e3eadf}
+.cleanser-guide-heading{max-width:680px;margin-bottom:22px}
+.mini-kicker{font-size:10px;font-weight:700;color:#718a72}
+.cleanser-guide-heading h3{font-size:23px;margin:7px 0;color:var(--ink)}
+.cleanser-guide-heading p{font-size:12px;color:var(--muted);margin:0;line-height:2}
+.cleanser-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cleanser-item{background:#fff;padding:20px;border:1px solid #e6ebe3;display:flex;flex-direction:column;align-items:flex-start}
+.cleanser-price{font-size:10px;color:#6f896f;background:#edf3eb;padding:4px 9px}
+.cleanser-item h4{font-size:15px;margin:10px 0 2px;color:var(--ink)}
+.cleanser-skin{font-size:10px;color:#8b7968}
+.cleanser-item p{font-size:11px;line-height:2;color:var(--muted);margin:12px 0}
+.cleanser-item a{font-size:10px;color:var(--green);font-weight:700;margin-top:auto;border-bottom:1px solid #cbd8ca;padding-bottom:3px}
+.price-disclaimer{font-size:10px;line-height:2;color:#78847b;margin:15px 0 0}
+@media(max-width:620px){.cleanser-guide{padding:20px 14px;margin-top:28px}.cleanser-list{grid-template-columns:1fr}.cleanser-guide-heading h3{font-size:20px}}
