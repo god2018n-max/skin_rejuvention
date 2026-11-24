@@ -693,7 +693,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible{
 .product-filter-controls{display:flex;flex-wrap:wrap;gap:8px}
 .filter-chip{
   appearance:none;border:1px solid #d8dfd2;background:#fffefa;color:#536b58;
-  border-radius:30px;padding:8px 15px;font:600 11px inherit;cursor:pointer;
+  border-radius:30px;padding:8px 15px;font-family:inherit;font-size:11px;font-weight:600;cursor:pointer;
   transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
 }
 .filter-chip:hover{transform:translateY(-2px);border-color:#91a88e}
