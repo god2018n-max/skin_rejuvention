@@ -16,7 +16,7 @@
     <a class="brand" href="#home" aria-label="روشنا، صفحه اصلی"><span class="brand-mark">ر</span><span>روشنا</span></a>
     <button class="menu-toggle" id="menuToggle" aria-label="باز کردن منو" aria-expanded="false">☰</button>
     <nav class="main-nav" id="mainNav">
-      <a href="#approach">نگاه روشن</a><a href="#routine">روتین مراقبت</a><a href="#skin-selector">شناخت نوع پوست</a><a href="#products">راهنمای محصولات</a><a href="#ingredients">مواد مؤثر</a><a href="#methods">روش‌ها</a><a href="#faq">پرسش‌ها</a>
+      <a href="#approach">نگاه روشن</a><a href="#routine">روتین مراقبت</a><a href="#skin-selector">شناخت نوع پوست</a><a href="#routine-builder">ساخت روتین</a><a href="#products">راهنمای محصولات</a><a href="#ingredients">مواد مؤثر</a><a href="#methods">روش‌ها</a><a href="#faq">پرسش‌ها</a>
     </nav>
     <a class="header-cta" href="#routine">شروع مراقبت <span>←</span></a>
   </header>
@@ -77,6 +77,26 @@
         <article class="skin-type-card"><span class="skin-type-mark">05</span><h3>پوست حساس</h3><p>ممکن است با بعضی محصولات یا شرایط محیطی دچار سوزش، خارش، قرمزی یا گزگز شود.</p><strong>شروع پیشنهادی</strong><span>فرمول ساده و بدون عطر، معرفی محصول جدید به‌صورت تک‌به‌تک و تست موضعی. حساسیت می‌تواند با پوست خشک یا چرب هم‌زمان باشد.</span></article>
       </div>
       <div class="skin-selector-footnote"><strong>یادت باشد:</strong> این دسته‌بندی‌ها راهنمای انتخاب‌اند، نه برچسب همیشگی. اگر التهاب، خارش، جوش دردناک یا خشکی ماندگار داری، برای ارزیابی دقیق با متخصص پوست مشورت کن. در شروع، یک شوینده ملایم، مرطوب‌کننده سازگار و ضدآفتاب کافی است؛ لازم نیست همه مواد فعال را هم‌زمان وارد روتین کنی.</div>
+    </section>
+
+    <section class="routine-builder-section section" id="routine-builder">
+      <div class="section-kicker">دستیار روشنا — روتین شخصی تو</div>
+      <div class="section-heading"><div><h2>روتینت را <em>با چند انتخاب ساده بساز</em></h2><p>نوع پوست و اولویت مراقبتی‌ات را انتخاب کن تا یک برنامه پایه صبح و شب ببینی.</p></div><span class="side-label">راهنمای آموزشی</span></div>
+      <form class="routine-builder" id="routineBuilder">
+        <div class="routine-fields">
+          <label for="skinType">نوع پوست</label>
+          <select id="skinType" name="skinType" required>
+            <option value="">انتخاب کن…</option><option value="normal">نرمال</option><option value="dry">خشک</option><option value="oily">چرب</option><option value="combination">مختلط</option><option value="sensitive">حساس</option>
+          </select>
+          <label for="skinGoal">اولویت اصلی مراقبت</label>
+          <select id="skinGoal" name="skinGoal">
+            <option value="basic">روتین پایه و حفظ سلامت پوست</option><option value="acne">جوش و چربی اضافه</option><option value="spots">لک و ناهماهنگی رنگ پوست</option><option value="dryness">خشکی و کم‌آبی</option><option value="texture">بافت ناهموار پوست</option>
+          </select>
+        </div>
+        <button class="button primary routine-submit" type="submit">روتین من را نمایش بده <span>←</span></button>
+        <p class="routine-form-hint">برای شروع، فقط یک شوینده ملایم، مرطوب‌کننده سازگار و ضدآفتاب کافی است.</p>
+      </form>
+      <div class="routine-result" id="routineResult" aria-live="polite" aria-atomic="true" hidden></div>
     </section>
 
     <section class="products-section section" id="products">
