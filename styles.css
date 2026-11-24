@@ -53,3 +53,10 @@
 .brightening-guide .cleanser-price{background:#f5ece4;color:#896b50}
 .brightening-guide .cleanser-item a{color:#80684f}
 .brightening-safety{margin:16px 0 0;padding:13px 16px;background:#fff9f2;border-right:3px solid #c5a17d;color:#746451;font-size:11px;line-height:2}
+
+/* Anti-aging and retinoid guide */
+.antiaging-guide{margin-top:26px;background:#f2f4f1;border-color:#e2e8e0}
+.antiaging-guide .mini-kicker{color:#6d806e}
+.antiaging-guide .cleanser-price{background:#e9efe8;color:#5f795f}
+.antiaging-guide .cleanser-item a{color:#55725d}
+.antiaging-safety{margin:16px 0 0;padding:13px 16px;background:#fff;border-right:3px solid #8ca58b;color:#627066;font-size:11px;line-height:2.15}
