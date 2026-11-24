@@ -60,3 +60,10 @@
 .antiaging-guide .cleanser-price{background:#e9efe8;color:#5f795f}
 .antiaging-guide .cleanser-item a{color:#55725d}
 .antiaging-safety{margin:16px 0 0;padding:13px 16px;background:#fff;border-right:3px solid #8ca58b;color:#627066;font-size:11px;line-height:2.15}
+
+/* Sunscreen product guide */
+.sunscreen-guide{margin-top:26px;background:#f3f6f5;border-color:#e0e9e6}
+.sunscreen-guide .mini-kicker{color:#66877d}
+.sunscreen-guide .cleanser-price{background:#e7f0ed;color:#55796e}
+.sunscreen-guide .cleanser-item a{color:#52786d}
+.sunscreen-safety{margin:16px 0 0;padding:13px 16px;background:#fff;border-right:3px solid #83a99a;color:#5f746b;font-size:11px;line-height:2.15}
