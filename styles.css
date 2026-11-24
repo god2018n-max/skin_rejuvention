@@ -39,3 +39,9 @@
 .toner-guide .mini-kicker{color:#8b8068}
 .toner-guide .cleanser-price{background:#f4f0e7;color:#887654}
 .toner-guide .cleanser-item a{color:#71816a}
+
+/* Hydration and moisturizer guide */
+.hydration-guide{margin-top:26px;background:#f1f6f3;border-color:#e0ebe4}
+.hydration-guide .mini-kicker{color:#668779}
+.hydration-guide .cleanser-price{background:#e8f1ec;color:#557968}
+.hydration-guide .cleanser-item a{color:#557968}
