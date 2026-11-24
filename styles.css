@@ -129,3 +129,10 @@
 .routine-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:15px}
 .routine-links a{font-size:11px;color:var(--green);font-weight:700;border-bottom:1px solid #cbd8ca;padding-bottom:3px}
 @media(max-width:620px){.routine-builder{padding:19px 15px}.routine-fields,.routine-plan-grid{grid-template-columns:1fr}.routine-result{padding:18px 14px}}
+
+
+/* FAQ reading resources */
+.faq-sources{margin-top:28px;padding:18px 20px;background:#f5f7f2;border:1px solid #e5ebe1;display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;font-size:11px;line-height:1.9}
+.faq-sources strong{color:var(--deep)}
+.faq-sources a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
+.faq-sources a:hover{opacity:.75}
