@@ -146,6 +146,20 @@
         </div>
         <p class="filter-count" id="productFilterCount" aria-live="polite">همه پیشنهادها نمایش داده می‌شوند.</p>
       </div>
+      <section class="product-compare" id="productCompare" aria-labelledby="productCompareTitle">
+        <div class="product-compare-heading">
+          <div><strong id="productCompareTitle">مقایسه محصولات انتخابی</strong><p>حداکثر سه محصول را از فهرست‌های پایین انتخاب کن تا قیمت، نوع پوست و توضیحاتشان کنار هم نمایش داده شود.</p></div>
+          <span id="compareSelectionCount" aria-live="polite">۰ از ۳ محصول</span>
+        </div>
+        <div class="compare-empty" id="compareEmpty">هنوز محصولی برای مقایسه انتخاب نکرده‌ای.</div>
+        <div class="compare-table-wrap" id="compareTableWrap" hidden>
+          <table class="compare-table">
+            <thead><tr><th scope="col">ویژگی</th><th scope="col">محصول اول</th><th scope="col">محصول دوم</th><th scope="col">محصول سوم</th></tr></thead>
+            <tbody id="compareTableBody"></tbody>
+          </table>
+        </div>
+        <button class="compare-clear" id="compareClear" type="button" hidden>پاک‌کردن انتخاب‌ها</button>
+      </section>
       <p class="product-image-note">تصاویر این بخش برای آشنایی بصری با گروه‌های مراقبتی هستند؛ ممکن است برند یا بسته‌بندی داخل عکس در بازار ایران موجود نباشد و به معنی توصیه همان محصول نیست.</p>
       <div class="cleanser-guide">
         <div class="cleanser-guide-heading">
