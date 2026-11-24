@@ -81,3 +81,10 @@
 .barrier-guide .cleanser-price{background:#f1e9df;color:#826f5d}
 .barrier-guide .cleanser-item a{color:#89745e}
 .barrier-safety{margin:16px 0 0;padding:13px 16px;background:#fff;border-right:3px solid #c4aa8c;color:#74695e;font-size:11px;line-height:2.15}
+
+/* Exfoliants and face masks guide */
+.exfoliation-guide{margin-top:26px;background:#f4f3ed;border-color:#e8e4d7}
+.exfoliation-guide .mini-kicker{color:#8a8060}
+.exfoliation-guide .cleanser-price{background:#eeecdf;color:#77704f}
+.exfoliation-guide .cleanser-item a{color:#77704f}
+.exfoliation-safety{margin:16px 0 0;padding:13px 16px;background:#fff;border-right:3px solid #b6aa79;color:#6f6a55;font-size:11px;line-height:2.15}
