@@ -59,3 +59,51 @@ routineBuilder?.addEventListener("submit", (event) => {
   routineResult.hidden = false;
   routineResult.scrollIntoView({behavior:"smooth",block:"nearest"});
 });
+
+// Filter product recommendations by the skin type they are intended for.
+const productFilterButtons = document.querySelectorAll("[data-skin-filter]");
+const productFilterCount = document.querySelector("#productFilterCount");
+const productGuides = document.querySelectorAll(".products-section .cleanser-guide");
+const productSkinKeywords = {
+  normal: /نرمال|معمولی|normal|انواع پوست|همه پوست/i,
+  dry: /خشک|کم.?آب|اگزما|dry|dehydrated/i,
+  oily: /چرب|جوش|آکنه|سرسیاه|مستعد آکنه|oily|acne/i,
+  combination: /مختلط|combination/i,
+  sensitive: /حساس|سد دفاعی|ترمیم|اگزما|sensitive|barrier/i
+};
+const productMatchesSkin = (item, skin) => {
+  if (skin === "all") return true;
+  const label = item.querySelector(".cleanser-skin")?.textContent || "";
+  const searchableText = label + " " + (item.querySelector("h4")?.textContent || "");
+  if (/انواع پوست|همه پوست/i.test(label)) return true;
+  return productSkinKeywords[skin].test(searchableText);
+};
+const applyProductSkinFilter = (skin) => {
+  let visibleCount = 0;
+  productGuides.forEach((guide) => {
+    const items = guide.querySelectorAll(".cleanser-item");
+    let visibleInGuide = 0;
+    items.forEach((item) => {
+      const show = productMatchesSkin(item, skin);
+      item.hidden = !show;
+      if (show) { visibleCount += 1; visibleInGuide += 1; }
+    });
+    guide.hidden = visibleInGuide === 0;
+  });
+  productFilterButtons.forEach((button) => {
+    const active = button.dataset.skinFilter === skin;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+  if (productFilterCount) {
+    const selected = document.querySelector('[data-skin-filter="' + skin + '"]')?.textContent.trim();
+    productFilterCount.textContent = skin === "all"
+      ? "همه " + visibleCount + " پیشنهاد نمایش داده می‌شوند."
+      : visibleCount + " پیشنهاد مرتبط با پوست " + selected + " نمایش داده می‌شود.";
+  }
+};
+productFilterButtons.forEach((button) => {
+  button.addEventListener("click", () => applyProductSkinFilter(button.dataset.skinFilter));
+});
+if (productFilterButtons.length) applyProductSkinFilter("all");
+
