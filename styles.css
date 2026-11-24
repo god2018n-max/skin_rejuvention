@@ -737,3 +737,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible{
   .product-compare-heading strong{font-size:13px}
   .compare-table{min-width:520px}
 }
+
+
+.compare-filter-note{
+  margin:10px 0 0;padding:8px 10px;
+  border-right:2px solid #c39a74;background:#f7f1e8;
+  color:#78684f;font-size:10px;line-height:1.9;
+}
