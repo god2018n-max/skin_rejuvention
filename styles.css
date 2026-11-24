@@ -436,3 +436,66 @@ a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible{
  .promise-strip strong{font-size:17px}
  .promise-strip span{font-size:9px}
 }
+
+
+/* Editorial photography direction — real skincare and skin texture */
+.hero-photo-frame{
+  position:relative;
+  overflow:visible;
+  background:#d8d0c1;
+  border-radius:48% 48% 18px 18px;
+  border:8px solid rgba(255,255,255,.22);
+}
+.hero-photo-frame .hero-photo{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center;
+  border-radius:inherit;
+}
+.hero-photo-frame .art-caption{
+  z-index:2;right:24px;left:24px;bottom:24px;
+  padding:13px 16px;background:rgba(255,252,244,.88);
+  border-radius:3px;backdrop-filter:blur(8px);
+}
+.hero-photo-frame .art-caption span{font-size:9px;letter-spacing:1.5px}
+.hero-photo-frame .art-caption strong{font-size:14px}
+.editorial-feature{
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);
+  align-items:center;gap:clamp(32px,7vw,90px);
+  background:#fffefa;padding-top:82px;padding-bottom:82px;
+}
+.editorial-photo-wrap{
+  position:relative;min-height:470px;max-height:590px;
+  overflow:hidden;background:#e8dfd2;
+  border-radius:3px 110px 3px 3px;
+}
+.editorial-photo-wrap img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;object-position:center 35%;
+}
+.editorial-photo-label{
+  position:absolute;bottom:20px;left:20px;
+  padding:10px 14px;background:rgba(255,253,246,.9);
+  color:#355640;font:10px Georgia,serif;letter-spacing:1.5px;
+}
+.editorial-copy{max-width:470px}
+.editorial-copy h2{
+  font-size:clamp(28px,3.4vw,43px);line-height:1.8;
+  margin:18px 0 14px;color:var(--deep)
+}
+.editorial-copy h2 em{color:#a17657}
+.editorial-copy p{font-size:13px;line-height:2.4;color:var(--muted);margin:0 0 20px}
+.editorial-copy small{
+  display:block;margin-top:30px;padding-top:13px;
+  border-top:1px solid #e9e2d7;color:#8b8b7c;font-size:10px
+}
+@media(max-width:760px){
+  .editorial-feature{grid-template-columns:1fr;gap:28px}
+  .editorial-photo-wrap{min-height:390px;max-height:460px;border-radius:3px 70px 3px 3px}
+  .editorial-copy{max-width:none}
+}
+@media(max-width:620px){
+  .hero-photo-frame{width:80%;height:300px}
+  .hero-photo-frame .art-caption{right:12px;left:12px;bottom:13px;padding:10px}
+  .hero-photo-frame .art-caption strong{font-size:12px}
+  .editorial-photo-wrap{min-height:340px}
+}
