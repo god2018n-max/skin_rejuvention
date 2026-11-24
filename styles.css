@@ -88,3 +88,21 @@
 .exfoliation-guide .cleanser-price{background:#eeecdf;color:#77704f}
 .exfoliation-guide .cleanser-item a{color:#77704f}
 .exfoliation-safety{margin:16px 0 0;padding:13px 16px;background:#fff;border-right:3px solid #b6aa79;color:#6f6a55;font-size:11px;line-height:2.15}
+
+
+/* Skin type finder */
+.skin-selector-section{background:#f7f8f4}
+.skin-test{max-width:760px;background:#fff;padding:22px 26px;border:1px solid #e5ebe2;margin:28px 0 18px}
+.skin-test h3{font-size:17px;margin:0 0 10px}
+.skin-test ol{margin:0;padding-right:22px;color:var(--muted);font-size:12px;line-height:2.2}
+.skin-test-note{font-size:11px;color:#786f60;background:#f7f4ee;padding:10px 13px;margin:14px 0 0;line-height:2}
+.skin-type-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.skin-type-card{background:#fff;border:1px solid #e5ebe2;padding:21px;min-height:205px}
+.skin-type-mark{font-family:Georgia,serif;font-size:12px;color:#9aaf98}
+.skin-type-card h3{font-size:16px;margin:7px 0}
+.skin-type-card p{font-size:11px;color:var(--muted);line-height:2;margin:0 0 13px}
+.skin-type-card strong{display:block;font-size:10px;color:var(--green);margin-bottom:4px}
+.skin-type-card>span:last-child{display:block;font-size:11px;color:#6d786f;line-height:2}
+.skin-selector-footnote{margin-top:18px;padding:15px 18px;background:#eaf0e8;border-right:3px solid #8da58a;color:#627064;font-size:11px;line-height:2.15}
+@media(max-width:850px){.skin-type-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.skin-type-grid{grid-template-columns:1fr}.skin-test{padding:18px 16px}.skin-type-card{min-height:0;padding:19px}}
